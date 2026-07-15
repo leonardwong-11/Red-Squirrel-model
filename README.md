@@ -13,6 +13,8 @@ $$
 \frac{dG}{dt} = -\gamma G + \delta G\left(1-\frac{R+G}{k}\right)
 $$
 
+![Simulink model print](simulink.png)
+
 The initial populations are:
 
 - Red squirrels: $R(0)=200$
