@@ -6,12 +6,12 @@ gamma = 0.2;
 delta = 1;
 
 beta = 0:0.05:1;
-culling_rate = 0:0.05:1;
+h = 0:0.05:1;
 
-y20 = zeros(length(beta), length(culling_rate));
+y20 = zeros(length(beta), length(h));
 
 for i = 1:length(beta)
-    for j = 1:length(culling_rate)
+    for j = 1:length(h)
 
         in = Simulink.SimulationInput(mdl);
         in = in.setVariable('beta', beta(i));
