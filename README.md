@@ -1,26 +1,78 @@
 # Red-Squirrel-model
-A Mathematical Model of Red Squirrel Decline
+## A Mathematical Model of Red Squirrel Decline
 
-This model tries to model red squirrel population in the UK. The main cause of death of red squirrel is a virus carries by grey squirrel which is lethal to only red squirrel. The model the population of the squirrels over time. The model also investigate the effect of culling and the effective culling rate at a particular virus transmission rate (beta).
-The equation used is the Lotka-Volterra with a logistic term added. 
+This model investigates the decline of the UK red squirrel population. The main cause of decline is the squirrelpox virus, which is carried by grey squirrels but is lethal only to red squirrels. The model describes the populations of both species over time and investigates the effect of grey squirrel culling. In particular, it determines the culling coefficient ($h$) required to ensure the survival of the red squirrel for different virus transmission rates ($\beta$).
 
-\begin{equation}
-\label{eq:bpm}
- \frac{dR}{dt} = \alpha R (1-\frac{R+G}{k})- \beta RG
-\end{equation}
-\begin{equation}
-\label{eq:bpm}
- \frac{dG}{dt} = -\gamma G + \delta G (1-\frac{R+G}{k})
-\end{equation} 
+The model is based on the Lotka--Volterra equations with an added logistic growth term.
 
-The inital condition of 200 red squirrel and 10 grey squirrel, the parameter alpha = 1, gamma = 0.2, delta = 1, k =1000 is used for all figures.
+$$
+\frac{dR}{dt}
+=
+\alpha R\left(1-\frac{R+G}{k}\right)
+-
+\beta RG
+$$
 
-<img width="1261" height="822" alt="red_grey" src="https://github.com/user-attachments/assets/c5d653f1-8270-4b4c-a2df-a5a7594f9d25" />
-Figure of population of the red and grey squirrels over time. Beta = 0.05. 
+$$
+\frac{dG}{dt}
+=
+-\gamma G
++
+\delta G\left(1-\frac{R+G}{k}\right)
+$$
 
+The initial populations are:
 
-<img width="1632" height="983" alt="heatmap" src="https://github.com/user-attachments/assets/ce203be0-62f9-4422-8c11-9503dbb4223b" />
+- Red squirrels: $R(0)=200$
+- Grey squirrels: $G(0)=10$
 
-<img width="1632" height="983" alt="effective_culling" src="https://github.com/user-attachments/assets/e2204186-5ed5-484a-b8d3-8436fee95ddf" />
-Figure of the culling coefficient needed to ensure the survivial of red squirrel at a particular beta.
-Notice the line of best fit stops after 0.15 as no amount of culling ca save the red squirrel population.
+The following parameters are used for all figures:
+
+- $\alpha = 1$
+- $\gamma = 0.2$
+- $\delta = 1$
+- $k = 1000$
+
+### Population dynamics ($\beta = 0.05$)
+
+![Population of red and grey squirrels over time](red_grey.png)
+
+*Population of the red and grey squirrels over time for $\beta = 0.05$.*
+
+---
+
+## Grey squirrel culling
+
+A culling term, $-hG$, is added to the grey squirrel equation:
+
+$$
+\frac{dR}{dt}
+=
+\alpha R\left(1-\frac{R+G}{k}\right)
+-
+\beta RG
+$$
+
+$$
+\frac{dG}{dt}
+=
+-\gamma G
++
+\delta G\left(1-\frac{R+G}{k}\right)
+-
+hG
+$$
+
+### Population heatmap
+
+![Heatmap of red squirrel population](heatmap.png)
+
+*Red squirrel population after 20 time units for different combinations of virus transmission rate ($\beta$) and culling coefficient ($h$).*
+
+---
+
+### Effective culling coefficient
+
+![Effective culling coefficient](effective_culling.png)
+
+*Minimum culling coefficient required to ensure the survival of the red squirrel population for a given virus transmission rate ($\beta$). The line of best fit terminates at $\beta \approx 0.15$, beyond which no feasible culling rate can prevent the extinction of the red squirrel population.*
