@@ -13,6 +13,7 @@ $$
 \frac{dG}{dt} = -\gamma G + \delta G\left(1-\frac{R+G}{k}\right)
 $$
 
+See below for the model inn Simulink.
 ![Simulink model print](simulink_model.png)
 
 The initial populations are:
