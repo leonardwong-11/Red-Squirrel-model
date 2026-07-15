@@ -6,19 +6,11 @@ This model investigates the decline of the UK red squirrel population. The main 
 The model is based on the Lotka--Volterra equations with an added logistic growth term.
 
 $$
-\frac{dR}{dt}
-=
-\alpha R\left(1-\frac{R+G}{k}\right)
--
-\beta RG
+\frac{dR}{dt} = \alpha R\left(1-\frac{R+G}{k}\right) - \beta RG
 $$
 
 $$
-\frac{dG}{dt}
-=
--\gamma G
-+
-\delta G\left(1-\frac{R+G}{k}\right)
+\frac{dG}{dt} = -\gamma G + \delta G\left(1-\frac{R+G}{k}\right)
 $$
 
 The initial populations are:
