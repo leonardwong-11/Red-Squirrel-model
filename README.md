@@ -35,14 +35,14 @@ The following parameters are used for all figures:
 
 ## Grey squirrel culling
 
-A culling term, $-hG$, is added to the grey squirrel equation:
+A culling term h, is incorporated to the grey squirrel equation:
 
 $$
 \frac{dR}{dt} = \alpha R\left(1-\frac{R+G}{k}\right) - \beta RG
 $$
 
 $$
-\frac{dG}{dt} = -\gamma G + \delta G\left(1-\frac{R+G}{k}\right) -hG
+\frac{dG}{dt} = -(\gamma (1-h) + h) G + \delta G\left(1-\frac{R+G}{k}\right)
 $$
 
 ### Population heatmap
